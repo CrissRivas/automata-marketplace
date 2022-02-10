@@ -1,0 +1,38 @@
+<div class="con-cuchara">
+
+    <section class="img">
+        <swiper class="img--detalle" [loop]="true" [autoHeight]="true" [autoplay]="{ delay: 3000, disableOnInteraction: false }" [pagination]="{ clickable: true }" [navigation]="true">
+
+            <ng-template swiperSlide class="swiper-slide" *ngFor="let img of comic.imgUrl">
+                <img [src]="img" alt="imagen">
+            </ng-template>
+        </swiper>
+    </section>
+    <section class="titulo">
+        <h1>{{comic.nombre}}</h1>
+    </section>
+    <section class="descripcion">
+        <p>{{comic.descripcion}}</p>
+        <div class="datos">
+            <section>Tags: {{comic.tags}}</section>
+            <section>
+                <div class="artista">
+                    <img [src]="artista.imgPerfil">
+                    <span>{{artista.nombre}}</span>
+                </div>
+            </section>
+        </div>
+
+    </section>
+    <section class="botones">
+        <div class="comprar"> <span class="material-icons-outlined">
+          paid
+          </span> {{comic.precio|currency:'MXN'}} </div>
+        <div class="love">
+            <div class="comprar"> <span class="material-icons-outlined">
+              favorite
+            </span> {{comic.engranes}} </div>
+        </div>
+    </section>
+
+</div>

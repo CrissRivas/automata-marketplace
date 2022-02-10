@@ -1,0 +1,52 @@
+<div class="con-cuchara">
+
+    <div class="login-signUp-grid">
+        <div class="login">
+
+            <h2>Login</h2>
+            <br>
+            <form #formContacto="ngForm" (ngSubmit)="onLogin(formContacto)">
+                <label for="">correo</label>
+                <input type="email" name="correoUsuario" #correoUsuario="ngModel" [(ngModel)]="usuario.email" required />
+                <span *ngIf=" correoUsuario.touched && !correoUsuario.valid">
+                Este campo es requerido
+            </span>
+                <label for="passUsuario">contraseña</label>
+                <input type="password" name="passUsuario" #passUsuario="ngModel" [(ngModel)]="usuario.password" required/>
+                <span *ngIf="passUsuario.touched && !passUsuario.valid">
+                Este campo es requerido
+              </span>
+
+                <input type="submit" name="" value="Ingresar" [disabled]="!formContacto.form.valid"><br>
+            </form>
+            <br>
+            <span *ngIf="PassErr" class="passErr">
+              Correo o contraseña invalida
+            </span>
+        </div>
+        <div class="singnUp">
+            <h2>Crear cuenta</h2>
+            <br>
+
+            <form #formContacto="ngForm" (ngSubmit)="onSignUp(formContacto)">
+                <label for="">Nombre de usuario</label><br>
+                <input type="text" name="nombreNewUsuario" #nombreNewUsuario="ngModel" [(ngModel)]="newUsuario.username" required />
+                <span *ngIf=" nombreNewUsuario.touched && !nombreNewUsuario.valid">
+            Este campo es requerido
+        </span><br>
+                <label for="">Correo</label><br>
+                <input type="text" name="correoNewUsuario" #correoNewUsuario="ngModel" [(ngModel)]="newUsuario.email" required />
+                <span *ngIf=" correoNewUsuario.touched && !correoNewUsuario.valid">
+            Este campo es requerido
+        </span><br>
+                <label for="passNewUsuario">contraseña</label><br>
+                <input type="password" name="passNewUsuario" #passNewUsuario="ngModel" [(ngModel)]="newUsuario.password" required />
+                <span *ngIf="passNewUsuario.touched && !passNewUsuario.valid">
+            Este campo es requerido
+          </span>
+
+                <input type="submit" name="" value="Enviar" [disabled]="!formContacto.form.valid"><br>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div *ngIf="logeado" class="msg-login">
+
+    <div class="box-msg">
+        <div (click)="cerrarMSG()"><span class="material-icons-outlined">
+          close
+          </span></div>
+        <h3> Para agregar {{msg}} es necesraio iniciar sesión</h3>
+
+        <a href="/login">Iniciar sesión</a>
+    </div>
+
+</div>
+
+<div class="comic--grid">
+    <app-comic [comic]="comic" *ngFor="let comic of comics" (addedProduct)="onAddToShoppingCart($event)" (addedlove)="onAddToLoveOnes($event)" (showProduct)="onMostrarDetalle($event)"></app-comic>
+</div>
+
+<div class="product-detail" [class.active]="mostrarDetalle">
+
+    <div (click)="toggleDetalle()" class="cerrar-detalle">
+        <span class="material-icons-outlined">
+        close
+        </span>
+    </div>
+
+    <div *ngIf="comicDetalle" class="d-detalles">
+
+        <swiper [slidesPerView]="1" class="img--detalle">
+            <ng-template swiperSlide *ngFor="let img of comicDetalle.imgUrl">
+                <img [src]="img" alt="imagen">
+            </ng-template>
+        </swiper>
+        <div class="texto-detalles">
+            <section class="nombre-descripcion">
+                <h1>{{comicDetalle.nombre}}</h1>
+
+
+                <p>{{comicDetalle.descripcionCorta}}</p>
+            </section>
+            <section>
+                <div class="d--Corazon">
+                    <span class="material-icons-outlined">
+                      shopping_cart
+                  </span>
+                </div>
+            </section>
+            <section>
+                <div class="d--Corazon">
+                    <span class="material-icons-outlined">
+                      payments
+                  </span>
+                </div>
+            </section>
+            <section>
+                <div class="d--Corazon">
+                    <span class="material-icons-outlined">
+                    favorite_border
+                    </span>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+
+</div>

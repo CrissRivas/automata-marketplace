@@ -1,0 +1,140 @@
+.computadora {
+    display: none;
+}
+
+.moviles {
+    display: grid;
+    grid-template-columns: 50px 1fr 5px;
+    height: 50px;
+    align-items: center;
+    justify-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 10px;
+}
+
+.boton-menu {
+    font-size: 20px;
+    color: black;
+    padding: 5px 10px;
+    transition: 500ms;
+}
+
+.boton-face {
+    font-size: 20px;
+    color: black;
+    padding: 10px;
+    padding-top: 15px;
+    position: relative;
+    transition: 500ms;
+}
+
+.mnu-login {
+    display: none;
+    position: absolute;
+    top: 45px;
+    height: 120px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.boton-face:hover {
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    .mnu-login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .btn-mnu-login {
+            color: black;
+            font-weight: normal;
+            font-size: 20px;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .btn-mnu-login:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+}
+
+.boton-menu:hover {
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.cerrar-detalle {
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mnu {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transform: translateX(-100%);
+    transition: 600ms;
+    &.active {
+        transform: translateX(0px);
+    }
+}
+
+.mnu ul {
+    list-style-type: none;
+}
+
+@media screen and (min-width: 40em) {
+    .moviles {
+        display: none;
+    }
+    .mnu {
+        display: none;
+    }
+    .computadora {
+        display: grid;
+        grid-template-columns: 250px 1fr 250px;
+        gap: 5px;
+        height: 60px;
+        align-items: center;
+        justify-items: center;
+        box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 10px;
+    }
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 20px;
+        justify-items: center;
+        height: 100%;
+    }
+    .usuario-carro {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-items: center;
+        gap: 20px;
+        height: 100%;
+    }
+}

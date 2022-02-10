@@ -1,0 +1,82 @@
+@import "~swiper/css/bundle";
+.con-cuchara {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 100px 1fr 100px;
+    align-items: center;
+    justify-items: center;
+}
+
+.img {
+    grid-row: 1/4;
+    justify-items: center;
+    align-items: center;
+    .img--detalle {
+        height: 525px;
+        width: 350px;
+    }
+}
+
+.titulo {
+    justify-items: center;
+    align-items: center;
+}
+
+.descripcion {
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    height: 100%;
+    .datos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        .artista {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            height: 100%;
+            width: 100%;
+            border-radius: 20px 0 0 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            img {
+                height: 75px;
+                width: 75px;
+                margin: 10px;
+                border-radius: 99px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            span {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.botones {
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    .comprar {
+        cursor: pointer;
+        margin: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 100px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .comprar:hover {
+        background-color: black;
+        color: white;
+    }
+}

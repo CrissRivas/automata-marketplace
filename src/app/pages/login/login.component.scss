@@ -1,0 +1,78 @@
+.con-cuchara {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-signUp-grid {
+    height: 400px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 20px;
+    width: 700px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    label {
+        font-weight: bold;
+        margin: 10px;
+    }
+    input {
+        margin-bottom: 10px;
+        height: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    input[type=submit]:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+    }
+}
+
+.singnUp form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    label {
+        font-weight: bold;
+    }
+    input {
+        margin-bottom: 10px;
+        height: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    input[type=submit]:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+    }
+}
+
+.passErr {
+    background-color: rgba(220, 20, 60, 0.514);
+    color: white;
+    font-weight: bold;
+    border: red 2px solid;
+    margin: 10px;
+    padding: 10px;
+}

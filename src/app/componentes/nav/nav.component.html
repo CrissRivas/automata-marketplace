@@ -1,0 +1,76 @@
+<nav class="moviles">
+    <section>
+        <div class="burgger" (click)="toggleMenu()">
+            <span class="material-icons-outlined">
+            menu
+            </span>
+        </div>
+    </section>
+    <section>Autómata Errante</section>
+    <section>
+        <a [routerLink]="['/kart']">
+            <span class="material-icons-outlined">
+          shopping_cart
+          </span>
+        </a>
+    </section>
+</nav>
+
+<div class="mnu" [class.active]="activeMenu">
+    <div (click)="toggleMenu()" class="cerrar-detalle">
+        <span class="material-icons-outlined">
+        close
+        </span>
+    </div>
+    <ul>
+        <li [routerLink]="['/home']">Cómics</li>
+        <li [routerLink]="['/artistas']">Artistas</li>
+        <li [routerLink]="['/links']">Links</li>
+    </ul>
+</div>
+
+<nav class="computadora">
+    <section>
+        <a [routerLink]="['/home']">
+            <h1>Autómata Errante</h1>
+        </a>
+    </section>
+    <section>
+        <div class="menu">
+
+            <section>
+                <a class="boton-menu" [routerLink]="['/home']">Cómics</a>
+            </section>
+            <section>
+                <a class="boton-menu" [routerLink]="['/artistas']">Artistas</a>
+            </section>
+            <section>
+                <a class="boton-menu" [routerLink]="['/links']">Links</a>
+            </section>
+        </div>
+    </section>
+    <section>
+        <div class="usuario-carro">
+            <section>
+                <a class="boton-face" [routerLink]="['/login']">
+                    <span class="material-icons-outlined">
+                  face
+                  </span>
+                    <div class="mnu-login">
+                        <div *ngIf="logeado()" class="btn-mnu-login" (click)="logOut()">Log Out</div>
+                        <a *ngIf="logeado()" class="btn-mnu-login" [routerLink]="['/perfil']">Perfil</a>
+                        <a *ngIf="!logeado()" class="btn-mnu-login" [routerLink]="['/login']">login</a>
+                        <a *ngIf="!logeado()" class="btn-mnu-login" [routerLink]="['/login']">Nuevo</a>
+                    </div>
+                </a>
+
+            </section>
+            <section>
+                <a class="boton-face" [routerLink]="['/kart']">
+                    <span class="material-icons-outlined">
+              shopping_cart
+              </span></a>
+            </section>
+        </div>
+    </section>
+</nav>
