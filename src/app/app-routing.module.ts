@@ -10,11 +10,13 @@ import { ArtistaComponent } from './pages/artista/artista.component';
 import { KomicsComponent } from './pages/komics/komics.component';
 import { KomicComponent } from './pages/komic/komic.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
-
+import { CorreoAuthComponent } from "./pages/correo-auth/correo-auth.component";
+import { EnvioComponent } from "./pages/envio/envio.component";
 
 const routes: Routes = [
   {path: '',redirectTo: '/home',pathMatch: 'full'},
   {path: 'artistas', component: ArtistasComponent},
+  {path: 'correo/:id', component: CorreoAuthComponent},
   {path: 'links', component: LinksComponent},
   {path: 'perfil', component: PerfilComponent},
   {path: 'login', component: LoginComponent},
@@ -22,6 +24,7 @@ const routes: Routes = [
   {path: 'artista/:idArtista', component: ArtistaComponent},
   {path: 'comic/:idKomic', component: KomicComponent},
   {path: 'home', component: KomicsComponent},
+  {path: 'envio', component: EnvioComponent},
   {path: '**',  component: PerdidoComponent},
 
 ];

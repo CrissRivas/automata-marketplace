@@ -1,0 +1,35 @@
+<div class="comic-card" *ngIf="this.visible">
+    <!-- Imagen -->
+    <section>
+        <a [routerLink]="['/comic',comic.nombreId]">
+            <img [src]="comic.imgUrl[0]" alt="Cómic">
+        </a>
+    </section>
+    <!-- Imagen -->
+    <!-- Titulo -->
+    <section class="texto">
+        <a [routerLink]="['/comic',comic.nombreId]">
+            <h3>
+                {{comic.nombre}}
+            </h3>
+        </a>
+        <p>{{comic.descripcionCorta}}</p>
+
+        <p>{{comic.precio|currency:'MXN'}}</p>
+        <div class="botones-comic">
+            <span *ngIf="this.status.kart" (click)="onAddToCart()" class="material-icons-outlined">
+    add_shopping_cart
+    </span>
+            <span *ngIf="this.status.love" (click)="darAmor()" class="material-icons-outlined">
+      favorite_border
+      </span>
+            <span *ngIf="this.status.info" (click)="mostrarDetalle()" class="material-icons-outlined">
+        lightbulb
+        </span>
+        </div>
+    </section>
+
+    <div class="unlove" (click)="this.unlove()"> <span class="material-icons-outlined">
+    clear
+    </span></div>
+</div>

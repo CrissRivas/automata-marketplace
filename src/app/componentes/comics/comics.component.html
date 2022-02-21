@@ -12,7 +12,7 @@
 </div>
 
 <div class="comic--grid">
-    <app-comic [comic]="comic" *ngFor="let comic of comics" (addedProduct)="onAddToShoppingCart($event)" (addedlove)="onAddToLoveOnes($event)" (showProduct)="onMostrarDetalle($event)"></app-comic>
+    <app-comic [comic]="comic" *ngFor="let comic of comics" (addedProduct)="onAddToShoppingCart($event)" (unLove)="onRemoveToShoppingCart($event)" (addedlove)="onAddToLoveOnes($event)" (showProduct)="onMostrarDetalle($event)"></app-comic>
 </div>
 
 <div class="product-detail" [class.active]="mostrarDetalle">
@@ -26,14 +26,17 @@
     <div *ngIf="comicDetalle" class="d-detalles">
 
         <swiper [slidesPerView]="1" class="img--detalle">
+
             <ng-template swiperSlide *ngFor="let img of comicDetalle.imgUrl">
-                <img [src]="img" alt="imagen">
+                <img [src]="img" alt="imagen" class="img--detalle">
             </ng-template>
         </swiper>
+
         <div class="texto-detalles">
             <section class="nombre-descripcion">
-                <h1>{{comicDetalle.nombre}}</h1>
-
+                <a [routerLink]="['/comic',comicDetalle.nombreId]">
+                    <h1>{{comicDetalle.nombre}}</h1>
+                </a>
 
                 <p>{{comicDetalle.descripcionCorta}}</p>
             </section>

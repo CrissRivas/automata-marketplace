@@ -1,0 +1,15 @@
+<div class="suma-precios">
+    <div class="sumatoria" *ngFor="let comic of nuComics">
+        <span>{{comic.nombre}}</span>
+
+        <div>{{comic.precio|currency:'MXN'}}
+            <p *ngIf="envio">+ 1 Envio</p>
+        </div>
+    </div>
+
+    <hr>
+    <div class="sumatoria">
+        <span> <h3>Total:</h3> </span>
+        <span><h3>{{total|currency:'MXN'}} </h3><p>+ {{nuComics.length}} envios</p></span>
+    </div>
+</div>

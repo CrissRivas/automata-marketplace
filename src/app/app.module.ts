@@ -24,6 +24,9 @@ import { KomicComponent } from './pages/komic/komic.component';
 import { CardComponent } from './componentes/card/card.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { CorreoAuthComponent } from './pages/correo-auth/correo-auth.component';
+import { CustomComicComponent } from './componentes/custom-comic/custom-comic.component';
+import { TotalComponent } from './componentes/total/total.component';
+import { EnvioComponent } from './pages/envio/envio.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { CorreoAuthComponent } from './pages/correo-auth/correo-auth.component';
     KomicComponent,
     CardComponent,
     PerfilComponent,
-    CorreoAuthComponent
+    CorreoAuthComponent,
+    CustomComicComponent,
+    TotalComponent,
+    EnvioComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,50 @@
+.con-cuchara {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr 3fr;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 5px;
+        height: 300px;
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+.bton {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 500ms;
+}
+
+.bton:hover {
+    background-color: black;
+    color: white;
+}
+
+.up {
+    padding-top: 20px;
+}
+
+.flex-amados {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    gap: 20px;
+    .comic {
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 100%;
+    }
+}

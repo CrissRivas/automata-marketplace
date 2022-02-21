@@ -1,0 +1,32 @@
+.con-cuchara {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+    .comics-kart {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        gap: 50px;
+        .comic {
+            border-radius: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: 100%;
+        }
+    }
+}
+
+.bton {
+    cursor: pointer;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

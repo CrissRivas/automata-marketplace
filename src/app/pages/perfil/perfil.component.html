@@ -1,1 +1,22 @@
-<p>perfil works!</p>
+<div class="con-cuchara">
+
+    <section>
+        <div class="info">
+            <span>Usuario:</span>
+            <span><h2>{{usuario.username}}</h2></span>
+            <span>Correo: </span>
+            <span><h2>{{usuario.email}}</h2></span>
+            <span class="bton">¿Cambiar contraseña?</span>
+        </div>
+
+
+    </section>
+    <section>
+        <div class="flex-amados" *ngIf="loaded">
+            <span> <h1>Cómics amados</h1></span>
+
+            <app-custom-comic class="comic" [comic]="comic" [nuevoStatus]="comicStatus" *ngFor="let comic of comicLove" (addedProduct)="onAddToShoppingCart($event)" (addedlove)="onAddToLoveOnes($event)" (showProduct)="onMostrarDetalle($event)" (noLove)="unlove($event)">
+            </app-custom-comic>
+        </div>
+    </section>
+</div>

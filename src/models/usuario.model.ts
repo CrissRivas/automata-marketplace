@@ -1,13 +1,14 @@
 import { Comic } from "./comic.model";
 
-export interface Artista{
+export interface Usuario{
   _id :string,
-  role: string,
-  comicsKart : Comic[],
-  nombre : string,
-  imgPerfil : string,
-  descripcion: string,
-  descripcionCorta: string,
+  roles: [string],
+  Kart : [string],
+  love : [string],
+  username : string,
+  email : string,
+  password: string,
+  verify: boolean,
   createdAt :Date,
   updatedAt : Date
 }

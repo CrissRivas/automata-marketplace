@@ -8,15 +8,9 @@ export class KartService {
   private myShoppingCart: Comic[] = [];
   constructor() { }
 
-  addProduct(product: Comic) {
-    this.myShoppingCart.push(product);
-  }
 
-  getShoppingCart() {
-    return this.myShoppingCart;
-  }
-
-  getTotal() {
+  getTotal(comics:Comic[]) {
+    this.myShoppingCart = comics;
     return this.myShoppingCart.reduce((sum, item) => sum + item.precio, 0);
   }
 }

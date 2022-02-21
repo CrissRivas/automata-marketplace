@@ -17,7 +17,9 @@ export class LoginComponent implements OnInit {
     email: '',
     password: ''
   }
+  public message:string = "Buscando..." ;
   public PassErr:boolean=false;
+  public env:boolean= false;
   constructor(
     private autService:AuthService,
      private router: Router
@@ -28,14 +30,20 @@ this.autenticacion();
   }
 
   onLogin(log:any){
+
     this.autService.signInUser(this.usuario)
     .subscribe(
       res=>{
+
+
         localStorage.setItem('token', res.token);
         this.router.navigate(['/perfil']);
+
       },
       err=> {
+
         this.PassErr=true;
+
       })
   }
 autenticacion(){
@@ -43,8 +51,19 @@ autenticacion(){
     this.router.navigate(['/perfil']);
   }
 }
-
-  onSignUp(formContacto:any){
-    console.log(formContacto);
+cerrarMSG(){
+  this.env=!this.env;
+}
+  onSignUp(formSignUp:any){
+    this.autService.signUpUser(this.newUsuario)
+    .subscribe(res=>{
+      this.message = res.message;
+      this.env=true;
+    },
+    err=>{
+      this.message = "Sucedio algo inesperado, intente despues"
+      this.env=true;
+    }
+      )
   }
 }

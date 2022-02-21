@@ -1,0 +1,65 @@
+<div class="con-cuchara">
+    <section class="formulario">
+        <h1>Formulario de envio</h1>
+        <form #formEnvio="ngForm" (ngSubmit)="onCotizacion(formEnvio)">
+            <h2> Informacion del destinatario</h2>
+            <span class="arow">
+              <!--  Nombre del comprador  -->
+              <span>
+                <label for="">Nombre</label>
+                <input type="text" name="nombreComprador" #nombreComprador="ngModel" [(ngModel)]="destination.nameReceiver" placeholder="Cachetonilo" required>
+                <span *ngIf="nombreComprador.touched && !nombreComprador.valid">Este campo es requerido</span>
+            </span>
+            <!-- Apellido del comprador -->
+            <span>
+                <label for="">Apellido</label>
+                <input type="text" name="apellidoComprador" #apellidoComprador="ngModel" [(ngModel)]="destination.lastNameReceiver" placeholder="Rivas Ayala" required>
+                <span *ngIf="apellidoComprador.touched && !nombreComprador.valid">Este campo es requerido</span>
+            </span>
+            </span>
+
+
+            <h2>contacto</h2>
+            <span class="arow">
+              <!-- correo del comprador -->
+              <span>
+                <label for=""> Correo</label>
+                <input type="email" name="correoComprador" #correoComprador="ngModel" [(ngModel)]="destination.emailReceiver" placeholder="hola@automataerrante.com" required>
+                <span *ngIf="correoComprador.touched && !nombreComprador.valid">Este campo es requerido</span>
+            </span>
+            <!-- celular del comprador -->
+            <span>
+                <label for=""> Numero de telefono</label>
+                <input type="tel" name="telefonoComprador" #telefonoComprador="ngModel" [(ngModel)]="destination.phoneReceiver" placeholder="3311445522" required>
+                <span *ngIf="telefonoComprador.touched && !telefonoComprador.valid">Este campo es requerido</span>
+            </span>
+            </span>
+
+            <h2>Direccion a enviar</h2>
+            <span class="arow">
+
+              <!-- dirección del comprador -->
+              <span>
+                <label for=""> Dirección a enviar</label>
+                <input type="text" name="direccionComprador" #direccionComprador="ngModel" [(ngModel)]="destination.addressDestination" placeholder="Av.Siempre Viva" required>
+                <span *ngIf="direccionComprador.touched && !direccionComprador.valid">Este campo es requerido</span>
+            </span>
+            <!-- Numero de residencia del comprador -->
+            <span>
+                <label for="">Numero de direccion</label>
+                <input type="number" name="numeroDireccionComprador" #numeroDireccionComprador="ngModel" [(ngModel)]="destination.numberDestination" placeholder="123"required>
+                <span *ngIf="numeroDireccionComprador.touched && !numeroDireccionComprador.valid">Este campo es requerido</span>
+            </span>
+            <!--  Codigo postal del comprador -->
+            <span>
+                <label for="">Codigo postal</label>
+                <input type="number" name="codigoPostalComprador" #codigoPostalComprador="ngModel" [(ngModel)]="destination.codePostalDestination" placeholder="44300" required>
+                <span *ngIf="codigoPostalComprador.touched && !codigoPostalComprador.valid">Este campo es requerido</span>
+            </span>
+            </span>
+            <!-- Submit -->
+            <input type="submit" name="" value="Cotizar envios" [disabled]="!formEnvio.form.valid"><br>
+        </form>
+    </section>
+    <section></section>
+</div>

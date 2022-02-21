@@ -1,6 +1,15 @@
-<div class="con-cuchara">
+<div class="con-cuchara" *ngIf="loaded">
     <div class="comics-kart">
-
+        <app-custom-comic class="comic" [comic]="comic" [nuevoStatus]="comicStatus" *ngFor="let comic of comicKart" (addedProduct)="onAddToShoppingCart($event)" (addedlove)="onAddToLoveOnes($event)" (showProduct)="onMostrarDetalle($event)" (noLove)="unKart($event)">
+        </app-custom-comic>
     </div>
-    <div class="suma-precios"></div>
+
+    <div>
+        <app-total [changeComics]="comicKart" [changeTotal]="kartTotal"> </app-total>
+        <a [routerLink]="['/envio']">
+            <span class="bton">
+        <span class="material-icons-outlined"> rocket_launch </span> Continuar con envios
+            </span>
+        </a>
+    </div>
 </div>

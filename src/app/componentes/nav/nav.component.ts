@@ -17,9 +17,13 @@ this.verificaToken();
 
   verificaToken(){
     if (this.logeado()) {
-      if (!this.autService.verifyToken()) {
-        this.logOut();
-      }
+     this.autService.verifyToken().subscribe(
+       data =>{
+         if(!data.validToken){
+          this.autService.logout();
+         }
+       }
+     )
     }
   }
 

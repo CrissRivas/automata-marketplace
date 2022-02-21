@@ -4,7 +4,7 @@
         <swiper class="img--detalle" [loop]="true" [autoHeight]="true" [autoplay]="{ delay: 3000, disableOnInteraction: false }" [pagination]="{ clickable: true }" [navigation]="true">
 
             <ng-template swiperSlide class="swiper-slide" *ngFor="let img of comic.imgUrl">
-                <img [src]="img" alt="imagen">
+                <img [src]="img" alt="imagen" class="img--detalle">
             </ng-template>
         </swiper>
     </section>

@@ -1,3 +1,16 @@
+<div *ngIf="env" class="msg-login">
+
+    <div class="box-msg">
+        <div (click)="cerrarMSG()"><span class="material-icons-outlined">
+        close
+        </span></div>
+        <h3> {{message}} </h3>
+
+
+    </div>
+
+</div>
+
 <div class="con-cuchara">
 
     <div class="login-signUp-grid">
@@ -28,7 +41,7 @@
             <h2>Crear cuenta</h2>
             <br>
 
-            <form #formContacto="ngForm" (ngSubmit)="onSignUp(formContacto)">
+            <form #formSignUp="ngForm" (ngSubmit)="onSignUp(formSignUp)">
                 <label for="">Nombre de usuario</label><br>
                 <input type="text" name="nombreNewUsuario" #nombreNewUsuario="ngModel" [(ngModel)]="newUsuario.username" required />
                 <span *ngIf=" nombreNewUsuario.touched && !nombreNewUsuario.valid">
@@ -45,7 +58,7 @@
             Este campo es requerido
           </span>
 
-                <input type="submit" name="" value="Enviar" [disabled]="!formContacto.form.valid"><br>
+                <input type="submit" name="" value="Enviar" [disabled]="!formSignUp.form.valid"><br>
             </form>
         </div>
     </div>

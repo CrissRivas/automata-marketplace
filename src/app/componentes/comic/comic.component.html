@@ -19,12 +19,18 @@
     <section>
         <div class="botones-comic">
             <span (click)="onAddToCart()" class="material-icons-outlined">
-      add_shopping_cart
-      </span><span (click)="darAmor()" class="material-icons-outlined">
-        favorite_border
-        </span>
+            add_shopping_cart
+          </span>
+
+            <span *ngIf="!love" (click)="darAmor()" class="material-icons-outlined">
+            favorite_border
+          </span>
+
+            <span *ngIf="love" (click)="desDarAmor()" class="material-icons">
+            favorite
+          </span>
             <span (click)="mostrarDetalle()" class="material-icons-outlined">
-          lightbulb
+              lightbulb
           </span>
         </div>
     </section>

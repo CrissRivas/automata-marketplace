@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Comic } from 'src/models/comic.model';
 import { ComicsService } from "../../services/comics.service";
 import { KartService } from "../../services/kart.service";
+import { LoveService } from "../../services/love.service";
 import  { AuthService } from "../../services/auth.service";
+import  { UsuarioService } from "../../services/usuario.service";
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-comics',
@@ -22,22 +26,40 @@ export class ComicsComponent implements OnInit {
   constructor(
     private comicSevise: ComicsService,
     private kartServise: KartService,
-    private autService:AuthService
+    private loveServise: LoveService,
+    private autService:AuthService,
+    private router: Router,
+    private usuarioService: UsuarioService
   ) {
-
+    this.loveServise.forLove();
    }
 
   ngOnInit(): void {
+
     this.comicSevise.getAllComics()
     .subscribe(data=>{
       this.comics = data;
     })
+
+
   }
 
 
   onAddToShoppingCart(product: Comic) {
     if(this.autService.loggedIn()){
-      this.kartServise.addProduct(product);
+      this.autService.verifyToken().subscribe(
+        res=>{
+          if (res.validToken) {
+            this.usuarioService.addKart(product._id)
+            .subscribe(res=>{
+              console.log(res);
+            })
+          } else {
+            this.router.navigate(['/login']);
+          }},err=>{
+            this.router.navigate(['/login']);
+          }
+      )
     }
     else{
       this.msg ="al carrito de compras";
@@ -45,10 +67,44 @@ export class ComicsComponent implements OnInit {
     }
   }
 
+  onRemoveToShoppingCart(product: Comic) {
+    if(this.autService.loggedIn()){
+      this.autService.verifyToken().subscribe(
+        res=>{
+          if (res.validToken) {
+            this.usuarioService.deleteKart(product._id)
+            .subscribe(res=>{})
+          } else {
+            this.router.navigate(['/login']);
+          }},err=>{
+            this.router.navigate(['/login']);
+          }
+      )
+    }
+    else{
+      this.msg ="al carrito de compras";
+      this.logeado= true;
+    }
+  }
 
   onAddToLoveOnes(product: Comic){
     if(this.autService.loggedIn()){
-      console.log(product);
+      this.autService.verifyToken().subscribe(
+        res=>{
+          console.log(res.validToken);
+
+          if (res.validToken) {
+            this.usuarioService.giveLove(product._id)
+            .subscribe(res=>{
+              console.log(res);
+            })
+          } else {
+            this.router.navigate(['/login']);
+          }},err=>{
+            this.router.navigate(['/login']);
+          }
+
+      )
 
     }
     else{
